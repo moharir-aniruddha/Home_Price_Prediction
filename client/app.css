@@ -1,133 +1,113 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
-.switch-field {
-	display: flex;
-	margin-bottom: 36px;
-	overflow: hidden;
+/* --- Global & Body Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.switch-field input {
-	position: absolute !important;
-	clip: rect(0, 0, 0, 0);
-	height: 1px;
-	width: 1px;
-	border: 0;
-	overflow: hidden;
+body {
+    font-family: 'Poppins', sans-serif;
+    /* Dark background for the entire page */
+    background-color: #121212; 
+    color: #e0e0e0; /* Light text color for contrast */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
-.switch-field label {
-	background-color: #e4e4e4;
-	color: rgba(0, 0, 0, 0.6);
-	font-size: 14px;
-	line-height: 1;
-	text-align: center;
-	padding: 8px 16px;
-	margin-right: -1px;
-	border: 1px solid rgba(0, 0, 0, 0.2);
-	box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
-	transition: all 0.1s ease-in-out;
+/* --- Main Predictor Container --- */
+.predictor-container {
+    background-color: #1e1e1e; /* Slightly lighter card background */
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 650px; /* Wider container for landscape layout */
+    border: 1px solid #333;
 }
 
-.switch-field label:hover {
-	cursor: pointer;
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: #ffffff;
 }
 
-.switch-field input:checked + label {
-	background-color: #a5dc86;
-	box-shadow: none;
+/* --- Form Group for Landscape Layout --- */
+.form-group {
+    display: flex; /* Arranges label and input side-by-side */
+    justify-content: space-between; /* Pushes them to opposite ends */
+    align-items: center; /* Vertically aligns them */
+    margin-bottom: 1.5rem;
 }
 
-.switch-field label:first-of-type {
-	border-radius: 4px 0 0 4px;
+.form-group label {
+    font-weight: 500;
+    flex-basis: 40%; /* Assigns a base width to the label */
 }
 
-.switch-field label:last-of-type {
-	border-radius: 0 4px 4px 0;
+/* --- Common styling for all input fields and select --- */
+.form-control {
+    flex-basis: 55%; /* Assigns a base width to the input field */
+    padding: 12px;
+    background-color: #2c2c2c;
+    border: 1px solid #444;
+    border-radius: 6px;
+    color: #e0e0e0;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-.form {
-	max-width: 270px;
-	font-family: "Lucida Grande", Tahoma, Verdana, sans-serif;
-	font-weight: normal;
-	line-height: 1.625;
-	margin: 8px auto;
-	padding-left: 16px;
-	z-index: 2;
+.form-control:focus {
+    outline: none;
+    border-color: #00aaff; /* A bright color for focus */
+    box-shadow: 0 0 0 3px rgba(0, 170, 255, 0.2);
 }
 
-h2 {
-	font-size: 18px;
-	margin-bottom: 8px;
-}
-.area{
-  font-family: "Roboto", sans-serif;
-  outline: 0;
-  background: #f2f2f2;
-  width: 76%;
-  border: 0;
-  margin: 0 0 10px;
-  padding: 10px;
-  box-sizing: border-box;
-  font-size: 15px;
-  height: 35px;
-  border-radius: 5px;
+/* --- Submit Button --- */
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    margin-top: 1rem;
+    background: linear-gradient(45deg, #00aaff, #0077cc);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.location{
-  font-family: "Roboto", sans-serif;
-  outline: 0;
-  background: #f2f2f2;
-  width: 76%;
-  border: 0;
-  margin: 0 0 10px;
-  padding: 10px;
-  box-sizing: border-box;
-  font-size: 15px;
-  height: 40px;
-  border-radius: 5px;
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 170, 255, 0.3);
 }
 
-.submit{
-  background: #a5dc86;
-  width: 76%;
-  border: 0;
-  margin: 25px 0 10px;
-  box-sizing: border-box;
-  font-size: 15px;
-	height: 35px;
-	text-align: center;
-	border-radius: 5px;
+/* --- Result Box (Designed to stand out) --- */
+.result-box {
+    width: 100%;
+    margin-top: 2rem;
+    padding: 20px;
+    background-color: #00aaff; /* Bright, standout background */
+    color: #ffffff; /* Contrasting text color */
+    border-radius: 6px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    /* Ensure h2 inside has no extra margin */
+    min-height: 70px; /* Give it some default height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.result{
-		background: #dcd686;
-		width: 76%;
-		border: 0;
-		margin: 25px 0 10px;
-		box-sizing: border-box;
-		font-size: 15px;
-		height: 35px;
-		text-align: center;
-}
-
-.img {
-  background: url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-	background-repeat: no-repeat;
-  background-size: auto;
-  background-size:100% 100%;
-  -webkit-filter: blur(5px);
-  -moz-filter: blur(5px);
-  -o-filter: blur(5px);
-  -ms-filter: blur(5px);
-  filter: blur(15px);
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
-
-body, html {
-  height: 100%;
+.result-box h2 {
+    margin: 0;
 }
