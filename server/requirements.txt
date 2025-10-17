@@ -1,0 +1,8 @@
+# Server Dependencies
+flask
+scikit-learn
+pandas
+numpy
+
+# Optional: If you use jupyter for initial model development or data exploration
+# jupyter
